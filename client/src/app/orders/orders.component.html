@@ -1,0 +1,38 @@
+<div class="container mt-2">
+    <div *ngIf="orders === null">
+        <p>There are no orders in your history</p>
+    </div>
+    
+    <div *ngIf="orders">
+        <div class="pb-5">
+            <div class="row">
+                    <table class="table table-hourser">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Order</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders" routerLink="/orders/{{order.id}}" style="cursor: pointer;">
+                                <th>
+                                    <strong>#{{order.id}}</strong>
+                                </th>
+                                <td>
+                                    {{order.orderDate | date: 'medium'}}
+                                </td>
+                                <td>
+                                    {{order.total | currency}}
+                                </td>
+                                <td>
+                                    {{order.status}}
+                                </td>
+                        </tbody>
+                    </table>
+                
+            </div>
+        </div>
+    </div>
+</div>

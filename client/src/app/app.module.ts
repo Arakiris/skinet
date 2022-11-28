@@ -24,7 +24,6 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     CoreModule,
     HomeModule,
     NgxSpinnerModule
-    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
